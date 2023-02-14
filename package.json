@@ -1,5 +1,5 @@
 {
-  "name": "webpack-project-starter",
+  "name": "knights-travails",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,18 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mlodzieniak/webpack-project-starter.git"
+    "url": "git+https://github.com/Mlodzieniak/knights-travails.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Mlodzieniak/webpack-project-starter/issues"
+    "url": "https://github.com/Mlodzieniak/knights-travails/issues"
   },
-  "homepage": "https://github.com/Mlodzieniak/webpack-project-starter#readme",
+  "homepage": "https://github.com/Mlodzieniak/knights-travails#readme",
   "devDependencies": {
     "css-loader": "^6.7.3",
-    "eslint": "^8.33.0",
+    "eslint": "^8.34.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.27.5",
