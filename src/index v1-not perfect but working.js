@@ -63,7 +63,6 @@ function Game() {
       history.push([start[0], start[1]]);
     }
     this.board[start[0]][start[1]] = 999;
-    this.printBoard();
     const knight = new Knight();
     knight.moves.forEach((move) => {
       const x = start[0] + move[0];
@@ -71,13 +70,7 @@ function Game() {
       if (x >= 0 && x < 8 && y >= 0 && y < 8) {
         if (typeof this.board[x][y] !== "number") {
           const newGame = new Game();
-          newGame.create();
-          for (let i = 0; i < this.board.length; i++) {
-            for (let j = 0; j < this.board[0].length; j++) {
-              newGame.board[i][j] = this.board[i][j];
-            }
-          }
-          // newGame.board = [...this.board];
+          newGame.board = [...this.board];
           newGame.board[x][y] = 999;
           newGame.newHistory = [...history];
           newGame.newHistory.push([x, y]);
@@ -96,7 +89,7 @@ function Game() {
         paths
       )
     );
-    return paths;
+    return paths[0];
   };
   return `${this.board}`;
 }
@@ -104,26 +97,3 @@ function Game() {
 const game = new Game();
 game.create();
 console.log(game.moveKnight([0, 0], [3, 3]));
-console.log(game.viableMoves);
-game.viableMoves[0].printBoard();
-game.viableMoves[1].printBoard();
-game.printBoard();
-
-/*
-board is an array size 8x8. each square is initially empty.
-function moveKnight accept his start position, end position, board.
-Knight can make 8 different moves if none of them goes outside of board.
-Board creates new knight with his position that is also starting position [x,y]
-if(knight position === end position) return 'history'   OK
-else{
-    -if queue doesn't have this board push it to queue  OK
-    -check all 8 moves how many of them are viable. OK
-    move is viable then it doesn't go outside board(or goes to on of the previous positions)
-    -for every viable move create new board with knight in new position OK
-    -create new array called 'history' that have cords of previous moves and attach it to new board OK
-    -store all new boards inside array called 'viableMoves' OK
-    -push inside array 'queue' all children from 'viableMoves'
-    -queue.splice(0,1)
-    -queue for each call this.moveKnight
-}
-*/
